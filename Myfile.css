@@ -1,0 +1,90 @@
+body{
+  background-color: black;
+}
+
+/** HEADER **/
+#header-nav {
+  padding-bottom: 30px;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+#nav-list {
+  margin-top: 10px;
+  margin-left: 20px;
+  color: blue;
+}
+#nav-list a {
+  margin-left: 80px;
+  color: red;
+  text-align: center;
+}
+/* END HEADER */
+
+#best {
+  background-color: red;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/** FOOTER **/
+#footer-nav {
+  margin-top: 0px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+  text-align: center;
+  border-top: 0;
+  color:white ;
+  
+}
+/* END FOOTER */
+#best1{
+  background-color: red;
+  margin-top: 50px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/** HOME PAGE **/
+#content {
+  background-color: purple;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+  border-top: 0;
+  color:white ;
+}
+.homepage a:hover, .homepage a:focus {
+  text-decoration: none;
+}
+
+#new{
+  background-color: blue;
+  margin-top: 25px;
+  margin-left: 55px;
+  margin-right: 1100px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  text-align: left;
+  border-top: 0;
+  
+}
+
+#new a {
+  color: white;
+}
+/* END HOME PAGE */

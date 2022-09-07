@@ -65,7 +65,8 @@ body{
   padding-right: 10px;
   text-align: left;
   border-top: 0;
-  color:white ;
+  color:white;
+  border-radius: 12px;
 }
 .homepage a:hover, .homepage a:focus {
   text-decoration: none;

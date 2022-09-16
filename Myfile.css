@@ -13,11 +13,11 @@ body{
 #nav-list {
   margin-top: 10px;
   margin-left: 20px;
-  color: blue;
+  color: #00FF00;
 }
 #nav-list a {
   margin-left: 80px;
-  color: red;
+  color: #008000;
   text-align: center;
 }
 /* END HEADER */
@@ -40,7 +40,7 @@ body{
   padding-bottom: 1px;
   text-align: center;
   border-top: 0;
-  color:white ;
+  color: #00FFFF ;
   
 }
 /* END FOOTER */

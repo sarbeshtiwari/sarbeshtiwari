@@ -17,7 +17,7 @@ body{
 }
 #nav-list a {
   margin-left: 80px;
-  color: #008000;
+  color: #00FF00;
   text-align: center;
 }
 /* END HEADER */
@@ -83,6 +83,11 @@ body{
   text-align: left;
   border-top: 0;
   
+}
+
+#badge{
+  margin-top: 25px;
+  margin-left: 55px;
 }
 
 #new a {

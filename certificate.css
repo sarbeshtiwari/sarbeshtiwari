@@ -1,0 +1,17 @@
+body{
+    background-color: black;
+}
+h1{
+    text-align: center;
+    color: chartreuse;
+    text-decoration: underline;
+}
+h2{
+    color: aqua;
+}
+h3{
+    color: blueviolet;
+}
+#image{
+    margin-left: 50px;
+}

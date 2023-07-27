@@ -29,4 +29,15 @@ header h2 {
 
 #image img {
   margin: 10px;
+  border-radius: 10px;
+}
+
+#image img {
+  margin: 10px;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+#image img:hover {
+  transform: scale(1.2);
 }

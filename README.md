@@ -1,2 +1,3 @@
-Following own dream in a exciting way..
-Connect to know more.....
+I am a skilled MERN (MongoDB, Express.js, React, Node.js) developer and mobile application developer with a strong background in creating and launching high-performance web and mobile applications. With a B.Tech in Computer Science and Engineering, I have successfully completed multiple projects, ranging from building user-friendly mobile apps to handling complex systems such as admin panels. My expertise includes designing, developing, and deploying applications, and I am committed to delivering high-quality solutions tailored to client needs.
+
+Let’s collaborate and bring your project to life!

@@ -2,7 +2,6 @@
 
 🚀 Full Stack Developer | MERN | Mobile Apps | AI/ML Enthusiast  
 🎓 Final Year B.Tech CSE @ Shri Ramswaroop Memorial University, Lucknow  
-💼 Former Associate Engineer Trainee @ Ericsson  
 
 ---
 
@@ -66,9 +65,9 @@
 
 ## 📈 GitHub Stats
 
-![Sarbesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=radical)
+![Sarbesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=sarbeshtiwari&show_icons=true&theme=radical)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=sarbeshtiwari&layout=compact&theme=radical)
 
 ---
 
@@ -83,9 +82,7 @@
 
 ## 📫 Connect With Me
 
-- 💼 LinkedIn: https://linkedin.com/in/YOUR_PROFILE
-- 📧 Email: your-email@example.com
-- 🌐 Portfolio: https://your-portfolio.com
+- 💼 LinkedIn: https://linkedin.com/in/sarbeshkumartiwari
 
 ---
 
@@ -95,4 +92,4 @@
 
 ---
 
-⭐️ From [Sarbesh Kumar Tiwari](https://github.com/YOUR_USERNAME)
+⭐️ From [Sarbesh Kumar Tiwari](https://github.com/sarbeshtiwari)

@@ -60,15 +60,6 @@
 ### 📦 Full Stack Web Apps
 - Built multiple production-ready apps using MERN stack
 - Integrated APIs, authentication, and database handling
-
----
-
-## 📈 GitHub Stats
-
-![Sarbesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=sarbeshtiwari&show_icons=true&theme=radical)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=sarbeshtiwari&layout=compact&theme=radical)
-
 ---
 
 ## 🏆 Achievements & Certifications
@@ -82,7 +73,7 @@
 
 ## 📫 Connect With Me
 
-- 💼 LinkedIn: https://linkedin.com/in/sarbeshkumartiwari
+- 💼 LinkedIn: https://linkedin.com/in/sarbeshtiwari
 
 ---
 

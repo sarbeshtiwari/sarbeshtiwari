@@ -1,3 +1,98 @@
-I am a skilled MERN (MongoDB, Express.js, React, Node.js) developer and mobile application developer with a strong background in creating and launching high-performance web and mobile applications. With a B.Tech in Computer Science and Engineering, I have successfully completed multiple projects, ranging from building user-friendly mobile apps to handling complex systems such as admin panels. My expertise includes designing, developing, and deploying applications, and I am committed to delivering high-quality solutions tailored to client needs.
+# 👋 Hi, I'm Sarbesh Kumar Tiwari
 
-Let’s collaborate and bring your project to life!
+🚀 Full Stack Developer | MERN | Mobile Apps | AI/ML Enthusiast  
+🎓 Final Year B.Tech CSE @ Shri Ramswaroop Memorial University, Lucknow  
+💼 Former Associate Engineer Trainee @ Ericsson  
+
+---
+
+## 🧑‍💻 About Me
+
+- 🔭 Currently working on **AI-powered applications & scalable web systems**
+- 💡 Passionate about **building real-world products**
+- 📱 Experience in **Web + Mobile App Development**
+- 🧠 Interested in **AI, Machine Learning & Data-driven systems**
+- ⚡ Strong in **problem-solving, system design & optimization**
+
+---
+
+## 🛠️ Tech Stack
+
+### 💻 Languages
+- Python 🐍
+- JavaScript (ES6+)
+- C++
+
+### 🌐 Web Development
+- React.js
+- Next.js
+- Node.js
+- Express.js
+- HTML5, CSS3, Tailwind CSS
+
+### 📱 Mobile Development
+- React Native
+- Flutter
+
+### 🗄️ Databases
+- MongoDB
+- MySQL
+- Firebase
+
+### ⚙️ Tools & Technologies
+- Git & GitHub
+- REST APIs
+- Docker (basic)
+- Postman
+- Vercel / Render / VPS Deployment
+
+---
+
+## 🚀 Projects
+
+### 🎵 Human Emotion Detection Music Player
+- AI-based web app that detects emotions and plays music accordingly
+- Uses Machine Learning models + frontend UI
+
+### 🧾 Admin Dashboard System
+- Dynamic dashboard with student management
+- Features: filtering, pagination, modal editing
+
+### 📦 Full Stack Web Apps
+- Built multiple production-ready apps using MERN stack
+- Integrated APIs, authentication, and database handling
+
+---
+
+## 📈 GitHub Stats
+
+![Sarbesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=radical)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical)
+
+---
+
+## 🏆 Achievements & Certifications
+
+- 🧠 Machine Learning in Python
+- 📊 Data Analysis in Python
+- 🔐 MasterCard Cyber Security Virtual Experience
+- 💼 Deloitte Australia Technology Job Simulation
+
+---
+
+## 📫 Connect With Me
+
+- 💼 LinkedIn: https://linkedin.com/in/YOUR_PROFILE
+- 📧 Email: your-email@example.com
+- 🌐 Portfolio: https://your-portfolio.com
+
+---
+
+## ⚡ Fun Fact
+
+> I love turning ideas into real-world scalable products 🚀
+
+---
+
+⭐️ From [Sarbesh Kumar Tiwari](https://github.com/YOUR_USERNAME)

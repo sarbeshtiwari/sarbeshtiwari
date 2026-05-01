@@ -1,7 +1,7 @@
 # 👋 Hi, I'm Sarbesh Kumar Tiwari
 
 🚀 Full Stack Developer | MERN | Mobile Apps | AI/ML Enthusiast  
-🎓 Final Year B.Tech CSE @ Shri Ramswaroop Memorial University, Lucknow  
+🎓 B.Tech Data Science & Artificial Intelligence
 
 ---
 
@@ -9,7 +9,7 @@
 
 - 🔭 Currently working on **AI-powered applications & scalable web systems**
 - 💡 Passionate about **building real-world products**
-- 📱 Experience in **Web + Mobile App Development**
+- 📱 Experience in **Web + Mobile App Development + AI & ML + Cloud services**
 - 🧠 Interested in **AI, Machine Learning & Data-driven systems**
 - ⚡ Strong in **problem-solving, system design & optimization**
 
@@ -20,7 +20,6 @@
 ### 💻 Languages
 - Python 🐍
 - JavaScript (ES6+)
-- C++
 
 ### 🌐 Web Development
 - React.js
@@ -44,6 +43,7 @@
 - Docker (basic)
 - Postman
 - Vercel / Render / VPS Deployment
+- AWS
 
 ---
 

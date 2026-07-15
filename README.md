@@ -1,86 +1,55 @@
-# 👋 Hi, I'm Sarbesh Kumar Tiwari
+# Hi, I'm Sarbesh 👋
 
-🚀 Full Stack Developer | MERN | Mobile Apps | AI/ML Enthusiast  
-🎓 B.Tech Data Science & Artificial Intelligence
+AI + full-stack engineer. I build and evaluate AI systems — LLM evaluation harnesses,
+agent-trajectory pipelines, multi-model benchmarking — and I ship the production web
+systems around them.
 
----
+At **Ethara AI** I design harnesses that run frontier models against reasoning tasks,
+capture and compare their trajectories, and benchmark a custom model I trained against
+them. My AI backends run on Python and FastAPI. Before that, 2+ years shipping MERN apps
+on AWS for 30,000+ daily users.
 
-## 🧑‍💻 About Me
+### What I work on
 
-- 🔭 Currently working on **AI-powered applications & scalable web systems**
-- 💡 Passionate about **building real-world products**
-- 📱 Experience in **Web + Mobile App Development + AI & ML + Cloud services**
-- 🧠 Interested in **AI, Machine Learning & Data-driven systems**
-- ⚡ Strong in **problem-solving, system design & optimization**
+- **LLM evaluation & agents** — Evaluation harnesses that run frontier LLMs (Google Gemini,
+  OpenAI GPT-5.2, Anthropic Claude Opus, Moonshot Kimi) against reasoning tasks, capturing
+  full step-by-step trajectories and comparing model reasoning move by move. Trained and
+  benchmarked a custom trajectory-based model against those models.
+- **Reasoning benchmarks** — Contributed to *Pencil Puzzle Bench*, an LLM reasoning
+  benchmark on formally verifiable puzzles: harness, JSONL trajectory tracing, multi-model
+  support (AWS Bedrock + others), and multi-run statistical evaluation.
+- **Full-stack, in production** — 10+ MERN applications on AWS serving 30,000+ daily users:
+  e-commerce, real estate, education and content platforms. Secure REST APIs (JWT + RBAC),
+  automated CI/CD, Nginx + PM2, Docker.
 
----
+### Tech I use
 
-## 🛠️ Tech Stack
+**AI / ML:** Python · FastAPI · LLM evaluation & benchmarking · agent trajectories &
+harnesses · multi-model comparison · prompt engineering · model APIs (Gemini, OpenAI,
+Claude, Kimi) · AWS Bedrock · custom model training on trajectory data
+**Backend:** Node.js · Express · FastAPI · REST APIs · JWT / RBAC · MongoDB · MySQL · PostgreSQL
+**Frontend:** React.js · Next.js · TypeScript · Tailwind CSS
+**Cloud / DevOps:** AWS (EC2, S3) · Docker · Nginx · PM2 · CI/CD · Git · Linux
+**Also:** Flutter · React Native · Java (working knowledge)
 
-### 💻 Languages
-- Python 🐍
-- JavaScript (ES6+)
+### A few projects
 
-### 🌐 Web Development
-- React.js
-- Next.js
-- Node.js
-- Express.js
-- HTML5, CSS3, Tailwind CSS
+- **LLM Evaluation Harness & Trajectory Pipeline** — Python/FastAPI system to run frontier
+  LLMs on reasoning tasks, capture trajectories, and benchmark a custom trajectory-trained model.
+- **Human Emotion Detection Music Player** — web app that detects emotion and plays matching
+  music using an ML model + frontend UI.
+- **Automated Cheque Processing** — Python tooling for automated cheque data extraction.
+- **Production MERN systems** — e-commerce, real estate and school-management platforms on AWS.
 
-### 📱 Mobile Development
-- React Native
-- Flutter
+### Certifications
 
-### 🗄️ Databases
-- MongoDB
-- MySQL
-- Firebase
+AWS Cloud Practitioner · IBM Machine Learning · IBM SQL & Relational Databases ·
+AI for INDIA 2.0 (Deep Learning / AI) · Cisco Introduction to Cybersecurity
 
-### ⚙️ Tools & Technologies
-- Git & GitHub
-- REST APIs
-- Docker (basic)
-- Postman
-- Vercel / Render / VPS Deployment
-- AWS
+### Reach me
 
----
+- Portfolio: https://sarbeshtiwari.vercel.app
+- LinkedIn: https://www.linkedin.com/in/sarbeshtiwari
+- Email: tiwarisarbesh02@gmail.com
 
-## 🚀 Projects
-
-### 🎵 Human Emotion Detection Music Player
-- AI-based web app that detects emotions and plays music accordingly
-- Uses Machine Learning models + frontend UI
-
-### 🧾 Admin Dashboard System
-- Dynamic dashboard with student management
-- Features: filtering, pagination, modal editing
-
-### 📦 Full Stack Web Apps
-- Built multiple production-ready apps using MERN stack
-- Integrated APIs, authentication, and database handling
----
-
-## 🏆 Achievements & Certifications
-
-- 🧠 Machine Learning in Python
-- 📊 Data Analysis in Python
-- 🔐 MasterCard Cyber Security Virtual Experience
-- 💼 Deloitte Australia Technology Job Simulation
-
----
-
-## 📫 Connect With Me
-
-- 💼 LinkedIn: https://linkedin.com/in/sarbeshtiwari
-
----
-
-## ⚡ Fun Fact
-
-> I love turning ideas into real-world scalable products 🚀
-
----
-
-⭐️ From [Sarbesh Kumar Tiwari](https://github.com/sarbeshtiwari)
+*B.Tech in CSE (Data Science & AI), 2020–2024. Based in Noida, India — open to remote & hybrid.*

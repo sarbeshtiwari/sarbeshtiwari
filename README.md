@@ -112,49 +112,95 @@ My work includes reasoning-focused benchmarks such as **Pencil Puzzle Bench**, w
 
 # 🚀 Featured Projects
 
-## 🧠 LLM Reasoning Benchmark — Pencil Puzzle Bench
+## 🧠 Pencil Puzzle Bench — LLM reasoning benchmark
 
-> A benchmark workflow for evaluating LLM reasoning on multi-step, formally verifiable puzzle tasks.
+> A benchmark for evaluating LLM reasoning on multi-step, formally verifiable puzzle tasks: 62,000+ puzzles across 94 types, with deterministic, step-level verification. ([paper](https://arxiv.org/abs/2603.02119))
 
-**Highlights**
+`Python` · `LLM Evaluation` · `AI Agents` · `Constraint Solving` · `Model Comparison`
 
-* 🧩 Reasoning-task evaluation
-* 🤖 AI-agent workflows
-* 🔍 Deterministic verification
-* 📊 Model performance comparison
-* 🐍 Python-based tooling
-* 🔌 Model API integrations
-* 📈 Benchmark-driven evaluation
+* 🧩 Multi-step reasoning tasks with a unique, solver-verified answer
+* 🔍 Step-level, deterministic verification of every move
+* 🤖 Agentic and direct-answer strategies across frontier models
+* 📊 Model performance comparison and trajectory analysis
+
+[Repository](https://github.com/sarbeshtiwari/pencil-puzzle-bench) · [Games](https://github.com/sarbeshtiwari/pencil-puzzle-bench-games)
+
+---
+
+## 🕹️ ARC-AGI-3 Platform
+
+> Internal full-stack platform for managing, playtesting and analysing ARC-AGI-3 grid-based puzzle games.
+
+`TypeScript` · `React` · `Vite` · `Node.js` · `Express` · `Docker`
+
+* 🎮 Public play mode and "Play Your Own" testing of uploaded games
+* 👥 Role-based dashboard (Tasker, QL, PL, Super Admin) with a multi-stage approval workflow
+* 🔔 Real-time SSE notifications, per-level session tracking, gameplay stats and audit trails
+
+[Repository](https://github.com/sarbeshtiwari/arc-agi-3)
+
+---
+
+## 📬 Reachout — outreach and AI job search
+
+> One app for personal outreach and the job search: email/WhatsApp campaigns from your own accounts, reply detection, application tracking, and an AI job matcher that searches 100+ job boards and company career sites, ranks openings against your resume, learns from your feedback and can apply for you.
+
+`Python` · `Flask` · `LangChain` · `Ollama` · `Playwright` · `React` · `MongoDB` · `Docker`
+
+* 🤖 AI job match: resume-aware ranking, A–H evaluation reports, tailored resumes with a fact check
+* 🌐 108 job board readers plus jobs and applications on any company's own careers site
+* 📈 Learns from Good fit / Not for me and real outcomes; follow-ups and insights
+* ✉️ Personal email campaigns with reply and bounce detection
+
+[Backend](https://github.com/sarbeshtiwari/reachout-backend) · [Frontend](https://github.com/sarbeshtiwari/reachout-frontend) · [Website](https://github.com/sarbeshtiwari/reachout-web)
 
 ---
 
 ## 🎙️ VoicePilot
 
-> AI-powered voice control for interacting with terminal-based AI coding agents.
+> Talk to any terminal AI agent by voice (Claude, Codex, Aider, Ollama…), or just talk to your computer. Runs fully locally.
 
-**Built with**
+`Python` · `faster-whisper` · `Speech-to-Text` · `Text-to-Speech` · `PTY` · `Local AI`
 
-`Python` `AI Agents` `Speech-to-Text` `Text-to-Speech` `PTY` `Desktop Automation`
+* 🎤 Wraps the agent in a pty, so it behaves exactly as normal
+* 🔊 Announces when the agent finishes and reads you the reply
+* 🔒 No API keys; your voice never leaves the machine
 
-**Capabilities**
+[Repository](https://github.com/sarbeshtiwari/voicepilot)
 
-* 🎤 Voice-controlled AI interaction
-* 🧠 Terminal-based AI agents
-* 🔊 Speech-to-text / text-to-speech
-* 🖥️ Desktop automation
-* ⌨️ Keyboard & mouse control
-* 📸 Screenshot workflows
-* ⚙️ Local AI processing
+---
 
-VoicePilot combines AI agents, local processing and desktop automation into a voice-driven developer workflow.
+## 📈 ATS — AI-assisted trading system
+
+> Self-hosted algorithmic trading system for Indian equities and F&O (NSE/BSE) with AI research agents that are always subordinate to a deterministic risk engine. *(under construction)*
+
+`Python` · `LLMs` · `Fintech` · `Risk Engine` · `Options Analytics`
+
+[Repository](https://github.com/sarbeshtiwari/trading-software)
+
+---
+
+## 📢 AdPilot
+
+> An ad network that monetises AI model thinking time: a browser extension shows one sponsored card while ChatGPT, Claude or Gemini is generating, with geo-targeting for advertisers.
+
+`TypeScript` · `Node.js` · `Express` · `Chrome Extension`
+
+[Repository](https://github.com/sarbeshtiwari/adpilot)
+
+---
+
+## 🛰️ SiteSentinel *(private)*
+
+> Multi-tenant website monitoring and incident management SaaS: uptime, synthetic browser tests, deep site scans, performance, API and real-user monitoring, with smart incident grouping and real-time alerts.
+
+`TypeScript` · `Next.js` · `PostgreSQL` · `Redis` · `Playwright` · `Turborepo`
 
 ---
 
 ## 🌐 AI Frontier Model Wrapper
 
 A reusable layer for interacting with frontier AI models and integrating model functionality into application workflows.
-
-**Focus**
 
 `AI APIs` · `Model Integration` · `Application Workflows`
 
@@ -171,12 +217,16 @@ A reusable layer for interacting with frontier AI models and integrating model f
 <img src="https://img.shields.io/badge/AI_Agents-000000?style=flat-square"/>
 <img src="https://img.shields.io/badge/Prompt_Engineering-8A2BE2?style=flat-square"/>
 <img src="https://img.shields.io/badge/Model_Evaluation-0066FF?style=flat-square"/>
+<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white"/>
+<img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white"/>
+<img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white"/>
 </p>
 
 ### ⚙️ Backend
 
 <p>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+<img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"/>
 <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white"/>
 <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white"/>
 <img src="https://img.shields.io/badge/REST_API-02569B?style=flat-square"/>
@@ -191,6 +241,7 @@ A reusable layer for interacting with frontier AI models and integrating model f
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
 <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
+<img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white"/>
 </p>
 
 ### 🗄️ Databases
@@ -199,6 +250,7 @@ A reusable layer for interacting with frontier AI models and integrating model f
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
+<img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white"/>
 </p>
 
 ### ☁️ Cloud / DevOps
@@ -220,7 +272,7 @@ A reusable layer for interacting with frontier AI models and integrating model f
 
 <img src="https://github-readme-stats.vercel.app/api?username=sarbeshtiwari&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=transparent" height="170"/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=sarbeshtiwari&hide_border=true&theme=transparent" height="170"/>
+<img src="https://streak-stats.demolab.com/?user=sarbeshtiwari&hide_border=true&theme=transparent" height="170"/>
 
 </div>
 

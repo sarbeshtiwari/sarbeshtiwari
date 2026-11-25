@@ -17,14 +17,14 @@ The question I keep coming back to: how do you measure whether an AI system work
 ## things i've built lately
 <sub>*mostly agents, newest first*</sub>
 
-### Reachout
+### Inkwell
 
 An AI agent that runs a job search end to end, with a person approving every step.  
-[Backend](https://github.com/sarbeshtiwari/reachout-backend) · [Frontend](https://github.com/sarbeshtiwari/reachout-frontend) · [Live app](https://reachout-web.netlify.app)
+[Backend](https://github.com/sarbeshtiwari/inkwell-backend) · [Frontend](https://github.com/sarbeshtiwari/inkwell-frontend) · [Live app](https://reachout-web.netlify.app)
 
-<img src="assets/reachout.svg" alt="Reachout flow: find jobs on 100+ boards and career pages, rank them against the resume with reasons, the user approves, apply on public forms only, learn from feedback and outcomes" width="100%">
+<img src="assets/inkwell.svg" alt="Inkwell flow: find jobs on 100+ boards and career pages, rank them against the resume with reasons, the user approves, apply on public forms only, learn from feedback and outcomes" width="100%">
 
-Job hunting is a loop of searching, tailoring, applying and following up across dozens of sites, and most tools either spam or break the sites' rules. Reachout reads 100+ job boards and companies' own career pages, ranks each opening against the resume with a LangChain pipeline (Claude Code or a local Ollama model) and explains every score. It learns from Good fit / Not for me and from what happens after an application, moving scores by at most 15 points and saying why. A tailored resume may only reorder what's already there; each change is rule-checked and the result is typeset with LaTeX. Company research keeps a fact only if the cited page actually shows it. Auto-apply works only on public forms, with consent, and sites that forbid automation are on a hard block list.
+Job hunting is a loop of searching, tailoring, applying and following up across dozens of sites, and most tools either spam or break the sites' rules. Inkwell reads 100+ job boards and companies' own career pages, ranks each opening against the resume with a LangChain pipeline (Claude Code or a local Ollama model) and explains every score. It learns from Good fit / Not for me and from what happens after an application, moving scores by at most 15 points and saying why. A tailored resume may only reorder what's already there; each change is rule-checked and the result is typeset with LaTeX. Company research keeps a fact only if the cited page actually shows it. Auto-apply works only on public forms, with consent, and sites that forbid automation are on a hard block list.
 
 <sub>Python · Flask · MongoDB (field-level encryption) · LangChain · Playwright · React · 186 tests</sub>
 

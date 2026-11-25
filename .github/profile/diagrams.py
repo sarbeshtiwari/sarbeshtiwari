@@ -133,7 +133,7 @@ def label_text(title, tagline, steps, checks):
     return f"{title}: {tagline}. Flow: {' → '.join(steps)}. " + "; ".join(checks) + "."
 
 
-card("reachout", "AI AGENT / CAREER", "JOB SEARCH, ON AUTOPILOT", "Reachout", "reach", "out",
+card("inkwell", "AI AGENT / CAREER", "JOB SEARCH, ON AUTOPILOT", "Inkwell", "ink", "well",
      "an AI agent that runs the whole job search", ["find", "rank", "you approve", "apply"],
      ["100+ job boards and company career pages", "Resume edits may only reorder, never add", "Nothing sent or applied without consent"],
      ["Python", "Flask", "LangChain", "Playwright", "React"], "tomato", "marigold", "live")

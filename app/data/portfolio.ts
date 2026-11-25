@@ -2,11 +2,11 @@
 // `featured` ones also appear in the homepage showcase and the "Featured" filter.
 export const projects = [
   {
-    title: "Reachout",
+    title: "Inkwell",
     desc: "Outreach and job-search platform. Users send personal email and WhatsApp messages from their own accounts, see who replied and what they want, track every job application from their inbox, get scored job matches and publish a one-page website with a no-code builder. Every stored value is encrypted at rest.",
     tech: ["Python", "Flask", "MongoDB", "React", "Vite", "Cloudinary"],
     url: "https://reachout-web.netlify.app",
-    repo: "https://github.com/sarbeshtiwari/reachout-backend",
+    repo: "https://github.com/sarbeshtiwari/inkwell-backend",
     category: "SaaS",
     status: "Active",
     featured: true,

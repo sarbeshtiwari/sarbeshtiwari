@@ -92,12 +92,12 @@ const selected: Showcase[] = [
     ],
   },
   {
-    project: "Reachout",
+    project: "Inkwell",
     cover: {
       bg: "var(--tomato)",
       fg: "#fffefd",
       caption: "outreach, organised",
-      brand: ["reach", "out."],
+      brand: ["ink", "well."],
       icon: "mail",
       steps: [["write", "mail"], ["send", "send"], ["track", "chart"]],
     },

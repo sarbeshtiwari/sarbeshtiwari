@@ -43,11 +43,11 @@ export default function Footer() {
         <span>
           designed &amp; developed by{" "}
           <a href="https://reachout-web.netlify.app" target="_blank" rel="noreferrer">
-            reachout&apos;s AI agent ↗
+            inkwell&apos;s AI agent ↗
           </a>
         </span>
         <span className="footer-credit-sub">
-          …and reachout&apos;s AI agent was designed &amp; developed by <Link href="/about">sarbesh</Link>
+          …and inkwell&apos;s AI agent was designed &amp; developed by <Link href="/about">sarbesh</Link>
         </span>
       </p>
       <div className="footer-note">

@@ -20,7 +20,7 @@ export const publicPages = [
     path: "/projects",
     title: "Projects | AI, Web & Mobile",
     description:
-      "Explore Sarbesh Kumar Tiwari’s projects: Reachout, AdPilot, VoicePilot, Ziptat, AI gaming, computer vision, e-commerce, real estate platforms, and Flutter mobile applications.",
+      "Explore Sarbesh Kumar Tiwari’s projects: Inkwell, AdPilot, VoicePilot, Ziptat, AI gaming, computer vision, e-commerce, real estate platforms, and Flutter mobile applications.",
   },
   {
     path: "/experience",

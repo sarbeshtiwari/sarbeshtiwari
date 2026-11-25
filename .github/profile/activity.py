@@ -44,6 +44,11 @@ text{{font-family:{SANS}}} .mono{{font-family:{MONO}}}
 .ink{{fill:#1f2328}} .soft{{fill:#59636e}} .faint{{fill:#818b98}} .rule{{stroke:#d1d9e0}}
 .l0{{fill:#eff2f5}} .l1{{fill:#b7e4dc}} .l2{{fill:#6cc5b5}} .l3{{fill:#239e8c}} .l4{{fill:#0f766e}}
 .b0{{fill:#0f766e}} .b1{{fill:#239e8c}} .b2{{fill:#6cc5b5}} .b3{{fill:#a8d8cf}} .b4{{fill:#59636e}} .b5{{fill:#9198a1}} .b6{{fill:#d1d9e0}}
+.cell{{animation:pop .5s ease-out both}} @keyframes pop{{from{{opacity:0;transform:scale(.4)}}}}
+.cell{{transform-box:fill-box;transform-origin:center}}
+.bar{{transform-box:fill-box;transform-origin:left center;animation:grow 1.2s cubic-bezier(.2,.8,.2,1) both}} @keyframes grow{{from{{transform:scaleX(0)}}}}
+.hot{{animation:glow 2.2s ease-in-out infinite}} @keyframes glow{{50%{{opacity:.55}}}}
+@media (prefers-reduced-motion: reduce){{.cell,.bar,.hot{{animation:none}}}}
 @media (prefers-color-scheme: dark){{
 .ink{{fill:#e6edf3}} .soft{{fill:#9198a1}} .faint{{fill:#6e7681}} .rule{{stroke:#3d444d}}
 .l0{{fill:#151b23}} .l1{{fill:#0e3b36}} .l2{{fill:#13665c}} .l3{{fill:#1f9e8b}} .l4{{fill:#2dd4bf}}
@@ -64,7 +69,7 @@ for d in days:
     row = day.isoweekday() % 7
     x, y = col * (size + gap) + 30, top_y + 16 + row * (size + gap)
     tip = f"{counts.get(d, 0)} on {day:%d %b %Y}"
-    out.append(f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="2.5" class="l{cells[d]}"><title>{e(tip)}</title></rect>')
+    out.append(f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="2.5" class="cell l{cells[d]}{' hot' if cells[d] == 4 else ''}" style="animation-delay:{col * .02:.2f}s"><title>{e(tip)}</title></rect>')
     if day.day <= 7 and row == 0 and day.month != seen_month:
         seen_month = day.month
         out.append(f'<text x="{x}" y="{top_y + 8}" class="faint" font-size="10.5">{day:%b}</text>')
@@ -76,7 +81,7 @@ out.append(f'<text x="0" y="{ly + 6}" class="faint mono" font-size="11.5" letter
 x = 0
 for i, (name, v) in enumerate(top):
     w = max(2, 880 * v / whole)
-    out.append(f'<rect x="{x:.1f}" y="{ly + 18}" width="{w - 2:.1f}" height="10" rx="2" class="b{i}"><title>{e(name)}: {100 * v / whole:.1f}%</title></rect>')
+    out.append(f'<rect x="{x:.1f}" y="{ly + 18}" width="{w - 2:.1f}" height="10" rx="2" class="bar b{i}" style="animation-delay:{1.2 + i * .12:.2f}s"><title>{e(name)}: {100 * v / whole:.1f}%</title></rect>')
     x += w
 x = 0
 for i, (name, v) in enumerate(top):

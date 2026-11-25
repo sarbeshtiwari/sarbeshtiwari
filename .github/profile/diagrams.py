@@ -5,6 +5,19 @@ SANS="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 SERIF="Georgia,'Iowan Old Style','Times New Roman',serif"
 MONO="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
 STYLE=f"""<style>
+.flow{{stroke-dasharray:5 5;animation:flow 1.2s linear infinite}}
+@keyframes flow{{to{{stroke-dashoffset:-20}}}}
+.pulse{{animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}}
+@keyframes pulse{{0%,100%{{stroke-width:1.2px;opacity:1}}50%{{stroke-width:2.6px;opacity:.85}}}}
+.runner{{animation:run var(--d,6s) cubic-bezier(.45,0,.55,1) infinite}}
+@keyframes run{{0%{{transform:translateX(0);opacity:0}}6%{{opacity:1}}94%{{opacity:1}}100%{{transform:translateX(var(--w));opacity:0}}}}
+.grow{{transform-box:fill-box;transform-origin:left center;animation:grow 1.4s cubic-bezier(.2,.8,.2,1) both}}
+@keyframes grow{{from{{transform:scaleX(0)}}}}
+.write{{animation:write 1.8s ease-out both;animation-delay:var(--t,.4s)}}
+@keyframes write{{from{{opacity:0;transform:translateY(4px)}}}}
+.blink{{animation:blink 1.6s steps(1) infinite}}
+@keyframes blink{{50%{{opacity:0}}}}
+@media (prefers-reduced-motion: reduce){{.flow,.pulse,.runner,.grow,.write,.blink{{animation:none}}.runner{{opacity:0}}}}
 .ink{{fill:#1f2328}} .soft{{fill:#59636e}} .faint{{fill:#818b98}} .acc{{fill:#0f766e}}
 .rule{{stroke:#d1d9e0}} .box{{fill:#ffffff;stroke:#d1d9e0}} .hot{{fill:#f0fdfa;stroke:#0f766e}} .arrow{{stroke:#818b98;fill:none}} .tip{{fill:#818b98}}
 .serif{{font-family:{SERIF}}} .sans{{font-family:{SANS}}} .mono{{font-family:{MONO}}}
@@ -20,7 +33,7 @@ def text(x,y,s,cls,size,weight=400,anchor="start",ls=0):
 
 # masthead: name on the left, a notebook sketch of the loop I work on at the right
 NOTE = "'Bradley Hand','Segoe Print','Comic Neue',cursive"
-b=[text(0,24,"AI / ML ENGINEER",'acc mono',13,600,ls=2.6),
+b=[text(0,24,"AI / ML ENGINEER",'acc mono',13,600,ls=2.6), '<rect x="166" y="13" width="8" height="14" class="acc blink"/>',
    text(0,78,"Sarbesh Kumar",'ink serif',46,400), text(0,128,"Tiwari",'ink serif',46,400),
    text(0,164,"LLM evaluation · AI systems · full-stack",'soft sans',17),
    text(0,190,"Gurugram, India",'faint sans',14),
@@ -29,13 +42,13 @@ b=[text(0,24,"AI / ML ENGINEER",'acc mono',13,600,ls=2.6),
 def node(x,y,w,label,cls="box"):
     return (f'<rect x="{x}" y="{y}" width="{w}" height="34" rx="7" class="{cls}" stroke-width="1.2"/>'
             + text(x+w/2,y+22,label,'ink sans',13,600,anchor="middle"))
-b+= [node(510,40,92,"model"), node(660,40,92,"output"), node(780,104,92,"verifier","hot"), node(560,140,120,"traces + scores")]
-b+= ['<path d="M602 57 L656 57" class="arrow" stroke-width="1.3"/><path d="M650 53 L657 57 L650 61Z" class="tip"/>',
-     '<path d="M752 62 C 790 66, 822 80, 826 100" class="arrow" stroke-width="1.3"/><path d="M821 96 L826 103 L830 95Z" class="tip"/>',
-     '<path d="M780 128 C 740 146, 712 154, 684 156" class="arrow" stroke-width="1.3"/><path d="M690 152 L683 156 L690 160Z" class="tip"/>',
-     '<path d="M560 150 C 520 140, 512 108, 540 76" class="arrow" stroke-width="1.3" stroke-dasharray="4 3"/><path d="M535 79 L541 74 L543 82Z" class="tip"/>',
-     f'<text x="770" y="90" class="acc" font-size="15" font-family="{NOTE}" text-anchor="end" transform="rotate(-4 770 90)">is it actually right?</text>',
-     f'<text x="500" y="200" class="soft" font-size="14" font-family="{NOTE}" transform="rotate(-2 500 200)">fix the step that failed, run it again</text>',
+b+= [node(510,40,92,"model"), node(660,40,92,"output"), node(780,104,92,"verifier","hot pulse"), node(560,140,120,"traces + scores")]
+b+= ['<path d="M602 57 L656 57" class="arrow flow" stroke-width="1.3"/><path d="M650 53 L657 57 L650 61Z" class="tip"/>',
+     '<path d="M752 62 C 790 66, 822 80, 826 100" class="arrow flow" stroke-width="1.3"/><path d="M821 96 L826 103 L830 95Z" class="tip"/>',
+     '<path d="M780 128 C 740 146, 712 154, 684 156" class="arrow flow" stroke-width="1.3"/><path d="M690 152 L683 156 L690 160Z" class="tip"/>',
+     '<path d="M560 150 C 520 140, 512 108, 540 76" class="arrow flow" stroke-width="1.3"/><path d="M535 79 L541 74 L543 82Z" class="tip"/>',
+     f'<text x="770" y="90" class="acc write" style="--t:.6s" font-size="15" font-family="{NOTE}" text-anchor="end" transform="rotate(-4 770 90)">is it actually right?</text>',
+     f'<text x="500" y="200" class="soft write" style="--t:1.6s" font-size="14" font-family="{NOTE}" transform="rotate(-2 500 200)">fix the step that failed, run it again</text>',
      text(880,24,"fig. 1",'faint mono',11,500,anchor="end")]
 open(ASSETS + "/masthead.svg","w").write(svg(880,212,"Sarbesh Kumar Tiwari, AI/ML engineer: LLM evaluation, AI systems, full-stack. Gurugram, India. Sketch: a model's output goes to a verifier, traces and scores feed the next run.","".join(b)))
 
@@ -55,10 +68,10 @@ for i,(org,role,a,z,cls,note) in enumerate(rows):
     y = 44 + i * 46
     b.append(text(0, y + 13, org, 'ink sans', 13, 600)); b.append(text(0, y + 30, role, 'soft sans', 11.5))
     xa, xz = xof(*a), xof(*z)
-    b.append(f'<rect x="{xa:.1f}" y="{y}" width="{xz - xa:.1f}" height="22" rx="5" class="{cls}" stroke-width="1.2"/>')
+    b.append(f'<rect x="{xa:.1f}" y="{y}" width="{xz - xa:.1f}" height="22" rx="5" class="{cls} grow" style="animation-delay:{.25 + (3 - i) * .35:.2f}s" stroke-width="1.2"/>')
     if note:
         b.append(text(round(min(xz + 8, 880), 1) if xz < 700 else round(xa - 8, 1), y + 15, note, 'soft sans', 11.5, anchor="start" if xz < 700 else "end"))
-b.append(f'<text x="{xof(2026, 11) - 2:.1f}" y="40" class="acc" font-size="13" font-family="{NOTE}" text-anchor="end">now</text>')
+b.append(f'<text x="{xof(2026, 11) - 2:.1f}" y="40" class="acc write" style="--t:1.8s" font-size="13" font-family="{NOTE}" text-anchor="end">now</text>')
 open(ASSETS + "/timeline.svg","w").write(svg(880,256,"Timeline: B.Tech in Data Science and AI 2020 to 2024; Flutter developer 2023 to 2024; Full Stack Developer at Ecorp July 2024 to February 2026; Full Stack Developer (AI Engineer) at Ethara.ai via Quess since February 2026.","".join(b)))
 
 # stack: what I reach for, grouped, with the everyday tools set darker
@@ -84,13 +97,14 @@ def flow(name,label,steps,hot,caption):
     b=[text(0,16,caption,'faint mono',11.5,500,ls=0.6)]
     for i,(t1,t2) in enumerate(steps):
         x=i*(bw+gap); y=34
-        b.append(f'<rect x="{x+.5:.1f}" y="{y+.5}" width="{bw-1:.1f}" height="80" rx="8" class="{"hot" if i==hot else "box"}" stroke-width="1"/>')
+        b.append(f'<rect x="{x+.5:.1f}" y="{y+.5}" width="{bw-1:.1f}" height="80" rx="8" class="{"hot pulse" if i==hot else "box"}" stroke-width="1"/>')
         b.append(text(round(x+14,1),y+33,t1,'ink sans',14,600))
         for k,line in enumerate(t2.split("\n")): b.append(text(round(x+14,1),y+53+k*16,line,'soft sans',12))
         if i<n-1:
-            ax=x+bw+3; b.append(f'<line x1="{ax:.1f}" y1="{y+40}" x2="{ax+gap-9:.1f}" y2="{y+40}" class="arrow" stroke-width="1.2"/>')
+            ax=x+bw+3; b.append(f'<line x1="{ax:.1f}" y1="{y+40}" x2="{ax+gap-9:.1f}" y2="{y+40}" class="arrow flow" stroke-width="1.2"/>')
             b.append(f'<path d="M{ax+gap-9:.1f} {y+36} L{ax+gap-4:.1f} {y+40} L{ax+gap-9:.1f} {y+44}Z" class="tip"/>')
-    open(ASSETS + f"/{name}.svg","w").write(svg(W,H,label,"".join(b)))
+    b.append(f'<circle cx="8" cy="{34+80+9}" r="3.5" class="acc runner" style="--w:{W-16}px;--d:{1.6*n}s"/>')
+    open(ASSETS + f"/{name}.svg","w").write(svg(W,H+8,label,"".join(b)))
 
 FLOWS=[]
 def add(*a): FLOWS.append(a); flow(*a)

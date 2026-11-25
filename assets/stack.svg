@@ -1,4 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="210" viewBox="0 0 880 210" role="img" aria-label="Stack. LLM engineering: evaluation, agents, LangChain, Claude/OpenAI/Gemini, Bedrock, Ollama. Backend: Python, FastAPI, Flask, Node.js, Express, Playwright. Frontend: TypeScript, React, Next.js, Tailwind, Flutter. Data: PostgreSQL, MongoDB, MySQL, Redis, TimescaleDB. Infrastructure: AWS, Docker, GitHub Actions, Nginx, Linux."><title>Stack. LLM engineering: evaluation, agents, LangChain, Claude/OpenAI/Gemini, Bedrock, Ollama. Backend: Python, FastAPI, Flask, Node.js, Express, Playwright. Frontend: TypeScript, React, Next.js, Tailwind, Flutter. Data: PostgreSQL, MongoDB, MySQL, Redis, TimescaleDB. Infrastructure: AWS, Docker, GitHub Actions, Nginx, Linux.</title><style>
+.flow{stroke-dasharray:5 5;animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-20}}
+.pulse{animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%,100%{stroke-width:1.2px;opacity:1}50%{stroke-width:2.6px;opacity:.85}}
+.runner{animation:run var(--d,6s) cubic-bezier(.45,0,.55,1) infinite}
+@keyframes run{0%{transform:translateX(0);opacity:0}6%{opacity:1}94%{opacity:1}100%{transform:translateX(var(--w));opacity:0}}
+.grow{transform-box:fill-box;transform-origin:left center;animation:grow 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.write{animation:write 1.8s ease-out both;animation-delay:var(--t,.4s)}
+@keyframes write{from{opacity:0;transform:translateY(4px)}}
+.blink{animation:blink 1.6s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.flow,.pulse,.runner,.grow,.write,.blink{animation:none}.runner{opacity:0}}
 .ink{fill:#1f2328} .soft{fill:#59636e} .faint{fill:#818b98} .acc{fill:#0f766e}
 .rule{stroke:#d1d9e0} .box{fill:#ffffff;stroke:#d1d9e0} .hot{fill:#f0fdfa;stroke:#0f766e} .arrow{stroke:#818b98;fill:none} .tip{fill:#818b98}
 .serif{font-family:Georgia,'Iowan Old Style','Times New Roman',serif} .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif} .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}

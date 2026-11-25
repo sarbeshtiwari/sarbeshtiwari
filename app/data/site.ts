@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 export const site = {
   url: "https://sarbeshtiwari.vercel.app",
   name: "Sarbesh Kumar Tiwari",
-  title: "Sarbesh Kumar Tiwari | AI/ML & Full-Stack Engineer",
+  title: "Sarbesh Kumar Tiwari | AI Engineer, Generative AI & LLM Apps",
   description:
-    "Sarbesh Kumar Tiwari builds AI/ML applications, full-stack web platforms, and mobile products. Explore his projects, engineering experience, and technical skills.",
+    "Sarbesh Kumar Tiwari is an AI engineer building generative AI products: LLM agents, voice interfaces and the full stack around them. Explore his projects, experience and skills.",
 };
 
 export const publicPages = [
@@ -14,7 +14,7 @@ export const publicPages = [
     path: "/about",
     title: "About & Skills",
     description:
-      "Meet Sarbesh Kumar Tiwari, a full-stack developer in Noida with a B.Tech in Data Science & AI. Discover his background, engineering approach, and skills.",
+      "Meet Sarbesh Kumar Tiwari, an AI engineer in Gurugram with a B.Tech in Data Science & AI who builds LLM-powered products end to end.",
   },
   {
     path: "/projects",
@@ -26,7 +26,7 @@ export const publicPages = [
     path: "/experience",
     title: "Engineering Experience",
     description:
-      "Explore Sarbesh Kumar Tiwari’s engineering work at Quess Corp, Ecorp Infosystems, Aayan India, and iWashhub, plus his Data Science & AI education.",
+      "Explore Sarbesh Kumar Tiwari’s engineering work at Quess Corp (for Ethara.ai), Ecorp Infosystems, Aayan India, and iWashhub, plus his Data Science & AI education.",
   },
   {
     path: "/certifications",
@@ -38,7 +38,7 @@ export const publicPages = [
     path: "/contact",
     title: "Contact & Collaboration",
     description:
-      "Contact Sarbesh Kumar Tiwari for full-stack development, AI/ML projects, mobile applications, and engineering opportunities. Based in Noida, India.",
+      "Contact Sarbesh Kumar Tiwari about AI engineer and generative AI roles, LLM application projects and collaborations. Based in Gurugram, open to roles anywhere in India or remote.",
   },
 ];
 

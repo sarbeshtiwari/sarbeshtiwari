@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import localFont from "next/font/local";
+import { Caveat, Fraunces, IBM_Plex_Serif, Karla } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import LoadingScreen from "./components/LoadingScreen";
+import PageTransitions from "./components/PageFlip";
+import BlobCursor from "./components/BlobCursor";
+import { DoodleDefs } from "./components/Doodles";
 import "./globals.css";
 import { site } from "./data/site";
 const inter = localFont({
@@ -21,10 +24,28 @@ const jetbrains = localFont({
   display: "swap",
   preload: false,
 });
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  style: ["normal", "italic"],
+  display: "swap",
+});
+const plex = IBM_Plex_Serif({
+  subsets: ["latin"],
+  variable: "--font-plex",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+const karla = Karla({ subsets: ["latin"], variable: "--font-karla", display: "swap" });
+const caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat", display: "swap" });
+// Runs before paint so a saved dark theme never flashes light.
+// Also marks the page as covered so entrance animations wait for the intro.
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("page-covered")`;
 const { title, description } = site;
 export const viewport: Viewport = {
-  themeColor: "#faf9f6",
-  colorScheme: "light",
+  themeColor: "#fffefd",
+  colorScheme: "light dark",
 };
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -32,8 +53,12 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Sarbesh Kumar Tiwari",
-    "AI ML Engineer",
-    "Full Stack Developer",
+    "AI Engineer",
+    "Generative AI Engineer",
+    "LLM Applications",
+    "AI Agents",
+    "Claude API",
+    "Gemini API",
     "Python",
     "TensorFlow",
     "React",
@@ -68,8 +93,8 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title, description },
   icons: {
-    icon: [{ url: "/favicon.svg?v=2", type: "image/svg+xml", sizes: "any" }],
-    shortcut: "/favicon.ico?v=2",
+    icon: [{ url: "/favicon.svg?v=3", type: "image/svg+xml", sizes: "any" }],
+    shortcut: "/favicon.ico?v=3",
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   verification: { google: "EML1vh2mWaTVeo-4ltN28peNm262eeyjqmNjxJURu_U" },
@@ -79,18 +104,26 @@ const person = {
   "@id": `${site.url}/#person`,
   name: "Sarbesh Kumar Tiwari",
   url: site.url,
-  jobTitle: "Full Stack Developer",
+  jobTitle: "AI Engineer",
   description,
   sameAs: [
     "https://github.com/sarbeshtiwari",
     "https://www.linkedin.com/in/sarbeshtiwari",
   ],
   knowsAbout: [
-    "Full-stack development",
+    "Generative AI",
+    "Large language models",
+    "AI agents",
+    "Speech recognition",
     "Machine learning",
     "Computer vision",
-    "Mobile development",
+    "Full-stack development",
   ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Gurugram",
+    addressCountry: "IN",
+  },
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "Shri Ramswaroop Memorial University",
@@ -113,13 +146,23 @@ const structuredData = {
 };
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${jetbrains.variable}`}>
+    <html
+      lang="en"
+      data-theme="light"
+      suppressHydrationWarning
+      className={`${inter.variable} ${jetbrains.variable} ${fraunces.variable} ${plex.variable} ${karla.variable} ${caveat.variable}`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <DoodleDefs />
         <div id="top" />
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <LoadingScreen />
+        <PageTransitions />
+        <BlobCursor />
         <Navbar />
         <main id="main-content" tabIndex={-1}>
           {children}

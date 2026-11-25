@@ -1,9 +1,13 @@
 "use client";
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Icon } from "../components/ui";
+import { Exclaims } from "../components/ui";
+
+// The form reads as a letter: the inputs sit inside the sentences on ruled
+// paper. On a successful send the sheet folds away before the thank-you page.
 export default function ContactClient() {
   const [busy, setBusy] = useState(false);
+  const [sent, setSent] = useState(false);
   const [message, setMessage] = useState("");
   const router = useRouter();
   async function submit(e: FormEvent<HTMLFormElement>) {
@@ -26,12 +30,11 @@ export default function ContactClient() {
         signal: controller.signal,
       });
       if (response.ok) {
-        router.push("/thank-you");
+        setSent(true);
+        setTimeout(() => router.push("/thank-you"), 700);
         return;
       }
-      setMessage(
-        "Your message could not be sent. Please try again or email me directly.",
-      );
+      setMessage("Your message could not be sent. Please try again or email me directly.");
     } catch {
       setMessage("Unable to connect. Please try again or use the email link.");
     } finally {
@@ -40,46 +43,36 @@ export default function ContactClient() {
     }
   }
   return (
-    <form className="contact-form" onSubmit={submit} aria-busy={busy}>
-      <h2>Tell me what you're thinking.</h2>
-      <div className="form-field">
-        <label htmlFor="contact-name">Your name</label>
-        <input
-          id="contact-name"
-          name="name"
-          autoComplete="name"
-          placeholder="Alex Morgan"
-          required
-          maxLength={100}
-        />
+    <form className={`letter ${sent ? "is-sent" : ""}`} onSubmit={submit} aria-busy={busy}>
+      <span className="tape tape-center" style={{ background: "var(--tape-rose)" }} />
+      <p className="letter-date">gurugram · {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
+      <p className="letter-line letter-greeting">Hi Sarbesh,</p>
+      <p className="letter-line">
+        my name is{" "}
+        <label className="sr-only" htmlFor="contact-name">Your name</label>
+        <input id="contact-name" name="name" autoComplete="name" placeholder="your name" required maxLength={100} />
+        and you can reach me at{" "}
+        <label className="sr-only" htmlFor="contact-email">Email address</label>
+        <input id="contact-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" required maxLength={254} />
+      </p>
+      <label className="letter-line" htmlFor="contact-message">
+        I&apos;m writing because…
+      </label>
+      <textarea
+        id="contact-message"
+        name="message"
+        placeholder="a GenAI role, a project, or just a hello"
+        rows={6}
+        required
+        maxLength={5000}
+      />
+      <div className="letter-foot">
+        <span className="letter-sign">yours, someone with a good idea</span>
+        <button className="btn-primary" type="submit" disabled={busy || sent}>
+          <Exclaims />
+          {sent ? "sent ✓" : busy ? "sealing the envelope…" : "send it →"}
+        </button>
       </div>
-      <div className="form-field">
-        <label htmlFor="contact-email">Email address</label>
-        <input
-          id="contact-email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          placeholder="alex@company.com"
-          required
-          maxLength={254}
-        />
-      </div>
-      <div className="form-field">
-        <label htmlFor="contact-message">What's on your mind?</label>
-        <textarea
-          id="contact-message"
-          name="message"
-          placeholder="A project, an opportunity, or just a hello…"
-          rows={5}
-          required
-          maxLength={5000}
-        />
-      </div>
-      <button className="btn-primary" type="submit" disabled={busy}>
-        {busy ? "Sending your message…" : "Send message"}
-        <Icon name="arrow" />
-      </button>
       <p className="form-status" role="status">
         {message}
       </p>

@@ -42,3 +42,8 @@ next-env.d.ts
 
 # Local visual verification output
 /artifacts/
+
+!.env.example
+
+# Browser-tool screenshots
+/.playwright-mcp/

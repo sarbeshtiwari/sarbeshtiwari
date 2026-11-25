@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-export const alt = "Sarbesh Kumar Tiwari — AI/ML & Full-Stack Engineering";
+export const alt = "Sarbesh Kumar Tiwari — AI Engineer, Generative AI & LLM Apps";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function Image() {
@@ -35,10 +35,10 @@ export default function Image() {
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <span style={{ fontSize: 82, letterSpacing: -4, lineHeight: 1.08 }}>
-          Engineering what's next.
+          Building with generative AI.
         </span>
         <span style={{ fontSize: 25, color: "#6352cc", marginTop: 28 }}>
-          AI / ML ENGINEER + FULL-STACK DEVELOPER
+          AI ENGINEER · GENERATIVE AI · LLM AGENTS
         </span>
       </div>
       <div

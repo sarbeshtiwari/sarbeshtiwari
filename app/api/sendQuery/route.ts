@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { dbConfigured, saveMessage } from "../../lib/messages";
 export async function POST(request: Request) {
   let data: unknown;
   try {
@@ -27,30 +28,41 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
-  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS)
-    return NextResponse.json(
-      { message: "Email delivery is unavailable. Please email directly." },
-      { status: 503 },
-    );
-  try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_PASS },
-      connectionTimeout: 10000,
-      socketTimeout: 10000,
-    });
-    await transporter.sendMail({
-      from: process.env.GMAIL_USER,
-      replyTo: email.trim(),
-      to: process.env.GMAIL_USER,
-      subject: `Portfolio inquiry from ${name.trim()}`,
-      text: `From: ${name.trim()} <${email.trim()}>\n\n${message.trim()}`,
-    });
-    return NextResponse.json({ message: "Message sent successfully!" });
-  } catch {
-    return NextResponse.json(
-      { message: "Failed to send the message." },
-      { status: 500 },
-    );
+  // Store the message first so it reaches the admin inbox even if email fails,
+  // then email it. The visitor sees success if either one worked.
+  let stored = false;
+  if (dbConfigured()) {
+    try {
+      await saveMessage(name.trim(), email.trim(), message.trim());
+      stored = true;
+    } catch {
+      /* Fall through to email. */
+    }
   }
+  let emailed = false;
+  if (process.env.GMAIL_USER && process.env.GMAIL_PASS) {
+    try {
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_PASS },
+        connectionTimeout: 10000,
+        socketTimeout: 10000,
+      });
+      await transporter.sendMail({
+        from: process.env.GMAIL_USER,
+        replyTo: email.trim(),
+        to: process.env.GMAIL_USER,
+        subject: `Portfolio inquiry from ${name.trim()}`,
+        text: `From: ${name.trim()} <${email.trim()}>\n\n${message.trim()}`,
+      });
+      emailed = true;
+    } catch {
+      /* Reported below if nothing else worked. */
+    }
+  }
+  if (stored || emailed) return NextResponse.json({ message: "Message sent successfully!" });
+  return NextResponse.json(
+    { message: "Failed to send the message. Please email directly." },
+    { status: dbConfigured() || process.env.GMAIL_USER ? 500 : 503 },
+  );
 }

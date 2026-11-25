@@ -108,3 +108,17 @@ export function Tags({ items }: { items: string[] }) {
     </div>
   );
 }
+
+// Little ink ticks that pop out of a button's corners on hover.
+export function Exclaims() {
+  return (
+    <>
+      <svg className="exclaim exclaim-tr" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M6 22 12 10M14 24l8-8M16 26l9-2" />
+      </svg>
+      <svg className="exclaim exclaim-bl" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M22 6 16 18M14 4l-8 8M12 2 3 4" />
+      </svg>
+    </>
+  );
+}

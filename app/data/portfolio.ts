@@ -48,6 +48,7 @@ export const projects = [
     repo: "https://github.com/sarbeshtiwari/trading-software",
     category: "AI / Fintech",
     status: "In Progress",
+    featured: true,
   },
   {
     title: "Oyeis",
@@ -266,8 +267,10 @@ export const projects = [
 
 export const experiences = [
   {
-    role: "Full Stack Developer",
+    role: "Full Stack Engineer (AI Engineer)",
     company: "Quess Corp",
+    client: "Ethara.ai",
+    type: "Full-time",
     location: "Gurugram, India",
     period: "Feb 2026 - Present",
     description: [
@@ -283,6 +286,7 @@ export const experiences = [
   {
     role: "Full Stack Developer",
     company: "Ecorp Infosystems Pvt. Ltd.",
+    type: "Full-time",
     location: "Noida, India",
     period: "Jul 2024 - Feb 2026",
     description: [
@@ -307,8 +311,9 @@ export const experiences = [
     current: false,
   },
   {
-    role: "Flutter Developer",
+    role: "Flutter Developer Intern",
     company: "Aayan India",
+    type: "Internship",
     location: "Lucknow, India",
     period: "Apr 2024 - Jun 2024",
     description: [
@@ -319,8 +324,9 @@ export const experiences = [
     current: false,
   },
   {
-    role: "Flutter Developer",
+    role: "Flutter Developer Intern",
     company: "iWashhub",
+    type: "Internship",
     location: "Lucknow, India",
     period: "Jun 2023 - Oct 2023",
     description: [
@@ -344,11 +350,18 @@ export const profile = {
   email: "tiwarisarbesh02@gmail.com",
   github: "https://github.com/sarbeshtiwari",
   linkedin: "https://www.linkedin.com/in/sarbeshtiwari",
-  resume: "/assets/certs/Sarbesh Kumar Tiwari.docx",
+  // Always the latest upload from /admin; see app/resume/route.ts.
+  resume: "/resume",
 };
 export const skillGroups = [
   {
-    name: "AI & Machine Learning",
+    name: "Generative AI & LLMs",
+    icon: "spark",
+    description: "Agents, guardrails and AI interfaces, from prompt to production.",
+    skills: ["Claude API", "Gemini API", "LLM agents", "Prompt engineering", "Ollama", "faster-whisper", "Speech-to-text"],
+  },
+  {
+    name: "Machine Learning",
     icon: "nodes",
     description: "From computer vision to interactive AI platforms.",
     skills: ["Python", "TensorFlow", "OpenCV", "Data Analysis", "Twilio API"],

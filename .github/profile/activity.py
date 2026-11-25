@@ -14,15 +14,21 @@ def get(url, accept="application/json"):
         return r.read().decode()
 
 
-page = get(f"https://github.com/users/{USER}/contributions", "text/html")
-cells = {m[1]: int(m[2]) for m in re.finditer(r'data-date="(\d{4}-\d\d-\d\d)"[^>]*?data-level="(\d)"', page)}
-counts = {}
-for m in re.finditer(r'for="(contribution-day-component-\d+-\d+)"[^>]*>([^<]+)<', page):
-    n = re.match(r"(\d+) contribution", m[2])
-    day = re.search(rf'data-date="(\d{{4}}-\d\d-\d\d)" id="{m[1]}"', page)
-    if day:
-        counts[day[1]] = int(n[1]) if n else 0
-total = sum(counts.values())
+def calendar(year):
+    """{date: (level, count)} for one calendar year, from the public contribution page."""
+    page = get(f"https://github.com/users/{USER}/contributions?from={year}-01-01&to={year}-12-31", "text/html")
+    out = {}
+    for m in re.finditer(r'data-date="(\d{4}-\d\d-\d\d)" id="(contribution-day-component-\d+-\d+)"[^>]*?data-level="(\d)"', page):
+        tip = re.search(rf'for="{m[2]}"[^>]*>(\d+) contribution', page)
+        out[m[1]] = (int(m[3]), int(tip[1]) if tip else 0)
+    return {d: v for d, v in out.items() if d.startswith(str(year))}
+
+
+joined = int(json.loads(get(f"https://api.github.com/users/{USER}"))["created_at"][:4])
+today = dt.date.today()
+years = {y: calendar(y) for y in range(today.year, joined - 1, -1)}  # newest first
+totals = {y: sum(c for _, c in cal.values()) for y, cal in years.items()}
+total = sum(totals.values())
 
 langs = collections.Counter()
 repos = json.loads(get(f"https://api.github.com/users/{USER}/repos?per_page=100&type=owner"))
@@ -56,26 +62,30 @@ text{{font-family:{SANS}}} .mono{{font-family:{MONO}}} .serif{{font-family:{SERI
 </style>"""
 e = html.escape
 out = []
-days = sorted(cells)
-first = dt.date.fromisoformat(days[0]) if days else dt.date.today()
-out.append(f'<text x="0" y="16" class="lake mono" font-size="11" letter-spacing="2">ON GITHUB · LAST 12 MONTHS</text>')
-out.append(f'<text x="880" y="18" class="soft hand" font-size="19" text-anchor="end">{total:,} contributions this year</text>')
-size, gap, top_y = 13, 3, 32
-seen_month = None
-for d in days:
-    day = dt.date.fromisoformat(d)
-    week = (day - first).days // 7 + (1 if first.weekday() != 6 and day.weekday() == 6 and False else 0)
-    col = ((day - first).days + (first.isoweekday() % 7)) // 7
-    row = day.isoweekday() % 7
-    x, y = col * (size + gap) + 30, top_y + 16 + row * (size + gap)
-    tip = f"{counts.get(d, 0)} on {day:%d %b %Y}"
-    out.append(f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="2.5" class="cell l{cells[d]}{' hot' if cells[d] == 4 else ''}" style="animation-delay:{col * .02:.2f}s"><title>{e(tip)}</title></rect>')
-    if day.day <= 7 and row == 0 and day.month != seen_month:
-        seen_month = day.month
-        out.append(f'<text x="{x}" y="{top_y + 8}" class="faint" font-size="10.5">{day:%b}</text>')
-for r, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
-    out.append(f'<text x="0" y="{top_y + 16 + r * (size + gap) + 10}" class="faint" font-size="10.5">{name}</text>')
-ly = top_y + 16 + 7 * (size + gap) + 34
+out.append(f'<text x="0" y="16" class="lake mono" font-size="11" letter-spacing="2">ON GITHUB · SINCE {joined}</text>')
+out.append(f'<text x="880" y="18" class="soft hand" font-size="19" text-anchor="end">{total:,} contributions till date</text>')
+size, gap, X = 12, 3, 66
+y0 = 44
+for i, (year, cal) in enumerate(years.items()):
+    top_y = y0 + i * 124
+    first = dt.date(year, 1, 1)
+    out.append(f'<text x="0" y="{top_y + 30}" class="ink serif" font-size="20">{year}</text>')
+    out.append(f'<text x="0" y="{top_y + 50}" class="faint mono" font-size="10.5">{totals[year]:,}</text>')
+    seen_month = None
+    for d in sorted(cal):
+        day = dt.date.fromisoformat(d)
+        if day > today:
+            continue
+        col = ((day - first).days + first.isoweekday() % 7) // 7
+        row = day.isoweekday() % 7
+        x, y = X + col * (size + gap), top_y + 14 + row * (size + gap)
+        lvl, n = cal[d]
+        out.append(f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="2" class="cell l{lvl}{' hot' if lvl == 4 else ''}" '
+                   f'style="animation-delay:{i * .25 + col * .01:.2f}s"><title>{n} on {day:%d %b %Y}</title></rect>')
+        if i == 0 and day.day <= 7 and row == 0 and day.month != seen_month:  # month names above the newest year only
+            seen_month = day.month
+            out.append(f'<text x="{x}" y="{top_y + 8}" class="faint" font-size="10">{day:%b}</text>')
+ly = y0 + len(years) * 124 + 10
 out.append(f'<line x1="0" y1="{ly - 14}" x2="880" y2="{ly - 14}" class="rule" stroke-width="1"/>')
 out.append(f'<text x="0" y="{ly + 6}" class="lake mono" font-size="11" letter-spacing="2">LANGUAGES IN MY REPOSITORIES</text>')
 x = 0
@@ -90,7 +100,7 @@ for i, (name, v) in enumerate(top):
     out.append(f'<text x="{x + 14}" y="{ly + 53}" class="soft" font-size="12">{e(label)}</text>')
     x += 14 + len(label) * 6.9 + 22
 H = ly + 66
-label = f"{total} contributions in the last year; languages: " + ", ".join(f"{n} {100 * v / whole:.0f}%" for n, v in top)
+label = f"{total} contributions since {joined} (" + ", ".join(f"{y}: {t}" for y, t in totals.items()) + "); languages: " + ", ".join(f"{n} {100 * v / whole:.0f}%" for n, v in top)
 svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="900" height="{H + 20}" viewBox="-10 -10 900 {H + 20}" role="img" aria-label="{e(label)}">'
        f'<title>{e(label)}</title>{STYLE}<rect x="-10" y="-10" width="900" height="{H + 20}" rx="10" class="bg"/>{"".join(out)}</svg>\n')
 open(os.path.join(os.path.dirname(__file__), "..", "..", "assets", "activity.svg"), "w").write(svg)

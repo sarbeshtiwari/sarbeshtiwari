@@ -25,3 +25,4 @@ jobs:
           commit_message: Update contribution snake
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# regenerate with the portfolio palette

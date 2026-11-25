@@ -91,6 +91,11 @@ Mobile apps from scratch: authentication, booking and order tracking, payments a
 
 <img src="assets/activity.svg" alt="My GitHub contributions over the last year, and the languages across my public repositories. Updated daily." width="100%">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sarbeshtiwari/sarbeshtiwari/output/snake-dark.svg">
+  <img alt="A snake eating my GitHub contribution graph" src="https://raw.githubusercontent.com/sarbeshtiwari/sarbeshtiwari/output/snake.svg" width="100%">
+</picture>
+
 **Certifications** · Smart India Hackathon finalist · IBM: Machine Learning with Python, Data Analysis with Python, SQL and Relational Databases, Big Data and Hadoop Foundations · Introduction to Machine Learning with Sound · AWS Cloud Practitioner (course) · Cisco Introduction to Cybersecurity
 
 <br>

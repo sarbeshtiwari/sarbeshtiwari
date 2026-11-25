@@ -101,20 +101,3 @@ Mobile apps from scratch: authentication, booking and order tracking, payments a
 <br>
 
 If you're hiring for AI or full-stack engineering, I'd like to hear about it: [tiwarisarbesh02@gmail.com](mailto:tiwarisarbesh02@gmail.com) or [LinkedIn](https://www.linkedin.com/in/sarbeshtiwari).
-
-<br>
-
-<details>
-<summary><sub>About this repository: it is also the source of my portfolio site</sub></summary>
-
-This repository builds [sarbeshtiwari.vercel.app](https://sarbeshtiwari.vercel.app), a Next.js 15 (App Router), React 19 and TypeScript site with self-hosted fonts, SEO (sitemap, structured data, Open Graph image) and a contact form.
-
-```sh
-npm install
-npm run dev      # http://localhost:3000
-npm run build && npm start
-```
-
-Content lives in `app/data/` (projects, experience, certifications, site metadata). The contact form needs `GMAIL_USER` and `GMAIL_PASS` (a Gmail app password) in `.env.local`; without them it offers a direct email link instead.
-
-</details>

@@ -1,4 +1,4 @@
-<img src="assets/masthead.svg" alt="Sarbesh Kumar Tiwari. AI/ML engineer working on LLM evaluation, AI systems and full-stack engineering. Gurugram, India." width="720">
+<img src="assets/masthead.svg" alt="Sarbesh Kumar Tiwari, AI/ML engineer: LLM evaluation, AI systems and full-stack engineering, Gurugram, India. Beside the name, a notebook sketch of the loop I work on: a model's output goes to a verifier, and traces and scores feed the next run." width="100%">
 
 I evaluate how frontier models reason, and I build the software around AI that decides whether it's useful. At Ethara.ai (through Quess Corp) I run reasoning benchmarks such as ARC-AGI-3 and Pencil Puzzle Bench, build datasets for frontier models and read agent trajectories to find the step where a plan goes wrong. Before that I spent two years at Ecorp shipping production web applications, so most of what I build has a real backend, a UI and a deployment behind the model call.
 
@@ -70,6 +70,8 @@ It wraps Claude, Codex, Aider or Ollama in a pseudo-terminal, so the agent behav
 
 ## Experience
 
+<img src="assets/timeline.svg" alt="Timeline: B.Tech in Data Science and AI 2020 to 2024; Flutter developer 2023 to 2024; Full Stack Developer at Ecorp July 2024 to February 2026; Full Stack Developer (AI Engineer) at Ethara.ai via Quess since February 2026." width="100%">
+
 **Full Stack Developer (AI Engineer)** · Quess Corp Ltd., assigned to Ethara.ai · <sub>Feb 2026 – present</sub>  
 LLM evaluation and reasoning benchmarks (ARC-AGI-3, Pencil Puzzle Bench), datasets for frontier models, agent-trajectory analysis, and the Python and Node.js services behind them.
 
@@ -85,12 +87,9 @@ Mobile apps from scratch: authentication, booking and order tracking, payments a
 
 ## Stack
 
-**Languages** · Python, TypeScript, JavaScript, SQL, Dart  
-**LLM engineering** · evaluation and benchmarking, agents, prompt design, LangChain, Claude / OpenAI / Gemini APIs, AWS Bedrock, Ollama  
-**Backend** · FastAPI, Flask, Node.js, Express, REST, Playwright  
-**Frontend** · React, Next.js, Tailwind CSS, Flutter  
-**Data** · PostgreSQL, MongoDB, MySQL, Redis, TimescaleDB  
-**Infrastructure** · AWS (EC2, S3, Lambda), Docker, GitHub Actions, Nginx, Linux
+<img src="assets/stack.svg" alt="Stack. LLM engineering: evaluation and benchmarks, agents, LangChain, Claude/OpenAI/Gemini APIs, AWS Bedrock, Ollama. Backend: Python, FastAPI, Flask, Node.js, Express, Playwright. Frontend: TypeScript, React, Next.js, Tailwind, Flutter. Data: PostgreSQL, MongoDB, MySQL, Redis, TimescaleDB. Infrastructure: AWS, Docker, GitHub Actions, Nginx, Linux." width="100%">
+
+<img src="assets/activity.svg" alt="My GitHub contributions over the last year, and the languages across my public repositories. Updated daily." width="100%">
 
 **Certifications** · Smart India Hackathon finalist · IBM: Machine Learning with Python, Data Analysis with Python, SQL and Relational Databases, Big Data and Hadoop Foundations · Introduction to Machine Learning with Sound · AWS Cloud Practitioner (course) · Cisco Introduction to Cybersecurity
 

@@ -1,0 +1,92 @@
+"""Draws assets/activity.svg: the last year of contributions and the languages across my public repositories.
+Uses only public data (the contribution calendar page and the repos API). Run by .github/workflows/profile.yml."""
+import collections, datetime as dt, html, json, os, re, urllib.request
+
+USER = "sarbeshtiwari"
+SKIP = {"HACTOBERFEST_2022", "SSD-Saarthi", "minor-"}  # forks and archives that aren't my code
+
+
+def get(url, accept="application/json"):
+    headers = {"User-Agent": "profile-graphics", "Accept": accept}
+    if os.environ.get("GITHUB_TOKEN") and "api.github.com" in url:
+        headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=30) as r:
+        return r.read().decode()
+
+
+page = get(f"https://github.com/users/{USER}/contributions", "text/html")
+cells = {m[1]: int(m[2]) for m in re.finditer(r'data-date="(\d{4}-\d\d-\d\d)"[^>]*?data-level="(\d)"', page)}
+counts = {}
+for m in re.finditer(r'for="(contribution-day-component-\d+-\d+)"[^>]*>([^<]+)<', page):
+    n = re.match(r"(\d+) contribution", m[2])
+    day = re.search(rf'data-date="(\d{{4}}-\d\d-\d\d)" id="{m[1]}"', page)
+    if day:
+        counts[day[1]] = int(n[1]) if n else 0
+total = sum(counts.values())
+
+langs = collections.Counter()
+repos = json.loads(get(f"https://api.github.com/users/{USER}/repos?per_page=100&type=owner"))
+for r in repos:
+    if r["fork"] or r["name"] in SKIP or r["size"] > 200_000:  # skip forks and repos that are mostly media
+        continue
+    for k, v in json.loads(get(r["languages_url"])).items():
+        langs[k] += v
+top = langs.most_common(6)
+rest = sum(langs.values()) - sum(v for _, v in top)
+if rest > 0:
+    top.append(("Other", rest))
+whole = sum(v for _, v in top) or 1
+
+SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
+STYLE = f"""<style>
+text{{font-family:{SANS}}} .mono{{font-family:{MONO}}}
+.ink{{fill:#1f2328}} .soft{{fill:#59636e}} .faint{{fill:#818b98}} .rule{{stroke:#d1d9e0}}
+.l0{{fill:#eff2f5}} .l1{{fill:#b7e4dc}} .l2{{fill:#6cc5b5}} .l3{{fill:#239e8c}} .l4{{fill:#0f766e}}
+.b0{{fill:#0f766e}} .b1{{fill:#239e8c}} .b2{{fill:#6cc5b5}} .b3{{fill:#a8d8cf}} .b4{{fill:#59636e}} .b5{{fill:#9198a1}} .b6{{fill:#d1d9e0}}
+@media (prefers-color-scheme: dark){{
+.ink{{fill:#e6edf3}} .soft{{fill:#9198a1}} .faint{{fill:#6e7681}} .rule{{stroke:#3d444d}}
+.l0{{fill:#151b23}} .l1{{fill:#0e3b36}} .l2{{fill:#13665c}} .l3{{fill:#1f9e8b}} .l4{{fill:#2dd4bf}}
+.b0{{fill:#2dd4bf}} .b1{{fill:#1f9e8b}} .b2{{fill:#13665c}} .b3{{fill:#0e3b36}} .b4{{fill:#9198a1}} .b5{{fill:#656c76}} .b6{{fill:#3d444d}}}}
+</style>"""
+e = html.escape
+out = []
+days = sorted(cells)
+first = dt.date.fromisoformat(days[0]) if days else dt.date.today()
+out.append(f'<text x="0" y="16" class="faint mono" font-size="11.5" letter-spacing=".6">THE LAST YEAR ON GITHUB</text>')
+out.append(f'<text x="880" y="16" class="soft" font-size="13" text-anchor="end">{total:,} contributions</text>')
+size, gap, top_y = 13, 3, 32
+seen_month = None
+for d in days:
+    day = dt.date.fromisoformat(d)
+    week = (day - first).days // 7 + (1 if first.weekday() != 6 and day.weekday() == 6 and False else 0)
+    col = ((day - first).days + (first.isoweekday() % 7)) // 7
+    row = day.isoweekday() % 7
+    x, y = col * (size + gap) + 30, top_y + 16 + row * (size + gap)
+    tip = f"{counts.get(d, 0)} on {day:%d %b %Y}"
+    out.append(f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="2.5" class="l{cells[d]}"><title>{e(tip)}</title></rect>')
+    if day.day <= 7 and row == 0 and day.month != seen_month:
+        seen_month = day.month
+        out.append(f'<text x="{x}" y="{top_y + 8}" class="faint" font-size="10.5">{day:%b}</text>')
+for r, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
+    out.append(f'<text x="0" y="{top_y + 16 + r * (size + gap) + 10}" class="faint" font-size="10.5">{name}</text>')
+ly = top_y + 16 + 7 * (size + gap) + 34
+out.append(f'<line x1="0" y1="{ly - 14}" x2="880" y2="{ly - 14}" class="rule" stroke-width="1"/>')
+out.append(f'<text x="0" y="{ly + 6}" class="faint mono" font-size="11.5" letter-spacing=".6">LANGUAGES IN MY REPOSITORIES</text>')
+x = 0
+for i, (name, v) in enumerate(top):
+    w = max(2, 880 * v / whole)
+    out.append(f'<rect x="{x:.1f}" y="{ly + 18}" width="{w - 2:.1f}" height="10" rx="2" class="b{i}"><title>{e(name)}: {100 * v / whole:.1f}%</title></rect>')
+    x += w
+x = 0
+for i, (name, v) in enumerate(top):
+    label = f"{name} {100 * v / whole:.0f}%"
+    out.append(f'<rect x="{x}" y="{ly + 44}" width="9" height="9" rx="2" class="b{i}"/>')
+    out.append(f'<text x="{x + 14}" y="{ly + 53}" class="soft" font-size="12">{e(label)}</text>')
+    x += 14 + len(label) * 6.9 + 22
+H = ly + 66
+label = f"{total} contributions in the last year; languages: " + ", ".join(f"{n} {100 * v / whole:.0f}%" for n, v in top)
+svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="880" height="{H}" viewBox="0 0 880 {H}" role="img" aria-label="{e(label)}">'
+       f'<title>{e(label)}</title>{STYLE}{"".join(out)}</svg>\n')
+open(os.path.join(os.path.dirname(__file__), "..", "..", "assets", "activity.svg"), "w").write(svg)
+print(label)

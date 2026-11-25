@@ -1,12 +1,12 @@
-<img src="assets/masthead.svg" alt="Sarbesh Kumar Tiwari, AI/ML engineer: LLM evaluation, AI systems and full-stack engineering, Gurugram, India. Beside the name, a notebook sketch of the loop I work on: a model's output goes to a verifier, and traces and scores feed the next run." width="100%">
+<img src="assets/masthead.svg" alt="hi, i'm an AI engineer who ships LLM agents, voice interfaces and the stack around them. Sarbesh Kumar Tiwari, Gurugram, India." width="100%">
 
 I evaluate how frontier models reason, and I build the software around AI that decides whether it's useful. At Ethara.ai (through Quess Corp) I run reasoning benchmarks such as ARC-AGI-3 and Pencil Puzzle Bench, build datasets for frontier models and read agent trajectories to find the step where a plan goes wrong. Before that I spent two years at Ecorp shipping production web applications, so most of what I build has a real backend, a UI and a deployment behind the model call.
 
 The question I keep coming back to: how do you measure whether an AI system works, and how do you let it act without handing it the keys?
 
-[Portfolio](https://sarbeshtiwari.vercel.app) · [LinkedIn](https://www.linkedin.com/in/sarbeshtiwari) · [tiwarisarbesh02@gmail.com](mailto:tiwarisarbesh02@gmail.com)
+[portfolio ↗](https://sarbeshtiwari.vercel.app) · [linkedin ↗](https://www.linkedin.com/in/sarbeshtiwari) · [tiwarisarbesh02@gmail.com](mailto:tiwarisarbesh02@gmail.com)
 
-### Current focus
+### what i'm working on
 
 - **LLM evaluation.** Benchmarks with machine-checkable answers, repeated runs instead of single scores, and trajectory traces that show *how* a model failed.
 - **Agents with guardrails.** Models propose; deterministic code decides. A risk engine the AI can't bypass, resume edits that may only reorder, facts kept only when their source page shows them.
@@ -14,7 +14,8 @@ The question I keep coming back to: how do you measure whether an AI system work
 
 <br>
 
-## Selected work
+## things i've built lately
+<sub>*mostly agents, newest first*</sub>
 
 ### Reachout
 
@@ -27,7 +28,7 @@ Job hunting is a loop of searching, tailoring, applying and following up across 
 
 <sub>Python · Flask · MongoDB (field-level encryption) · LangChain · Playwright · React · 186 tests</sub>
 
-### Pencil Puzzle Bench: evaluation tooling
+### Pencil Puzzle Bench
 
 My additions to an open benchmark for LLM reasoning on puzzles with exactly verifiable solutions.  
 [My fork](https://github.com/sarbeshtiwari/pencil-puzzle-bench) · [Upstream](https://github.com/approximatelabs/pencil-puzzle-bench)
@@ -38,7 +39,7 @@ A single benchmark score hides most of what matters: how stable it is across run
 
 <sub>Python · AWS Bedrock · LLM APIs</sub>
 
-### ATS: AI-assisted trading system
+### ATS
 
 A trading system for Indian equities and F&O where AI agents may propose trades but can never place one on their own. *Under construction.*  
 [Repository](https://github.com/sarbeshtiwari/trading-software)
@@ -60,15 +61,13 @@ It wraps Claude, Codex, Aider or Ollama in a pseudo-terminal, so the agent behav
 
 <sub>Python · faster-whisper · PTY / ConPTY · macOS, Linux, Windows</sub>
 
-#### Also
+#### also on the bench
 
 - [**SiteSentinel**](https://github.com/sarbeshtiwari/sitesentinel): multi-tenant website monitoring and incident management, with tenant isolation through PostgreSQL row-level security and SSRF-safe egress for checks. In development. <sub>TypeScript · Next.js · PostgreSQL · Redis · Playwright</sub>
 - [**AdPilot**](https://github.com/sarbeshtiwari/adpilot): an ad network for the seconds while a model is generating. A Chrome MV3 extension, three portals, hashed session tokens and TOTP-protected admin. In development. <sub>TypeScript · Express · Prisma · PostgreSQL · Redis</sub>
 - [**ARC-AGI-3 platform**](https://github.com/sarbeshtiwari/arc-agi-3): the internal platform for playtesting and reviewing ARC-AGI-3 puzzle games, with four roles, a multi-stage approval workflow, live notifications and per-level session stats. <sub>TypeScript · Express · React · Python</sub>
 
 <br>
-
-## Experience
 
 <img src="assets/timeline.svg" alt="Timeline: B.Tech in Data Science and AI 2020 to 2024; Flutter developer 2023 to 2024; Full Stack Developer at Ecorp July 2024 to February 2026; Full Stack Developer (AI Engineer) at Ethara.ai via Quess since February 2026." width="100%">
 
@@ -85,8 +84,6 @@ Mobile apps from scratch: authentication, booking and order tracking, payments a
 
 <br>
 
-## Stack
-
 <img src="assets/stack.svg" alt="Stack. LLM engineering: evaluation and benchmarks, agents, LangChain, Claude/OpenAI/Gemini APIs, AWS Bedrock, Ollama. Backend: Python, FastAPI, Flask, Node.js, Express, Playwright. Frontend: TypeScript, React, Next.js, Tailwind, Flutter. Data: PostgreSQL, MongoDB, MySQL, Redis, TimescaleDB. Infrastructure: AWS, Docker, GitHub Actions, Nginx, Linux." width="100%">
 
 <img src="assets/activity.svg" alt="My GitHub contributions over the last year, and the languages across my public repositories. Updated daily." width="100%">
@@ -100,4 +97,6 @@ Mobile apps from scratch: authentication, booking and order tracking, payments a
 
 <br>
 
-If you're hiring for AI or full-stack engineering, I'd like to hear about it: [tiwarisarbesh02@gmail.com](mailto:tiwarisarbesh02@gmail.com) or [LinkedIn](https://www.linkedin.com/in/sarbeshtiwari).
+**say hi.** If you're hiring for AI or full-stack engineering, I'd like to hear about it: [tiwarisarbesh02@gmail.com](mailto:tiwarisarbesh02@gmail.com) or [LinkedIn](https://www.linkedin.com/in/sarbeshtiwari).
+
+<br>

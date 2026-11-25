@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="190" viewBox="0 0 440 190" role="img" aria-label="AI Frontier Model Wrapper">
+<title>AI Frontier Model Wrapper</title>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#79c0ff" stop-opacity=".22"/><stop offset=".55" stop-color="#0d1117" stop-opacity="0"/></linearGradient></defs>
+<rect x=".5" y=".5" width="439" height="189" rx="14" fill="#0d1117" stroke="#30363d"/>
+<rect x=".5" y=".5" width="439" height="189" rx="14" fill="url(#g)"/>
+<rect x="0" y="22" width="4" height="34" rx="2" fill="#79c0ff"/>
+<text x="22" y="47" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22">🌐</text>
+<text x="56" y="46" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e6edf3">AI Frontier Model Wrapper</text>
+<text x="22" y="80" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9da7b3">Reusable layer for calling frontier AI models and wiring</text>
+<text x="22" y="99" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9da7b3">their output into application workflows.</text>
+<rect x="22" y="148" width="68" height="24" rx="12" fill="#79c0ff" fill-opacity=".14" stroke="#79c0ff" stroke-opacity=".45"/>
+<text x="56.0" y="164.5" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#79c0ff">AI APIs</text>
+<rect x="98" y="148" width="97" height="24" rx="12" fill="#79c0ff" fill-opacity=".14" stroke="#79c0ff" stroke-opacity=".45"/>
+<text x="146.5" y="164.5" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#79c0ff">Integration</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="346" viewBox="0 0 900 346" role="img" aria-label="Experience timeline"><title>Experience and education</title>
+<rect x=".5" y=".5" width="899" height="345" rx="14" fill="#0d1117" stroke="#30363d"/>
+<text x="32" y="44" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#e6edf3">Journey</text>
+<line x1="200" y1="72" x2="200" y2="316" stroke="#30363d" stroke-width="2"/>
+<text x="176" y="100" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#9da7b3">Feb 2026 – Present</text>
+<circle cx="200" cy="96" r="9" fill="#0d1117" stroke="#a371f7" stroke-width="3"/>
+<circle cx="200" cy="96" r="3.5" fill="#a371f7"/>
+<text x="226" y="101" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e6edf3">Quess Corp Ltd. · assigned to Ethara.ai</text>
+<text x="226" y="124" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#a371f7">Full Stack Developer (AI Engineer)</text>
+<text x="226" y="146" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#9da7b3">LLM evaluation · reasoning benchmarks · frontier-model datasets · AI agents</text>
+<text x="176" y="192" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#9da7b3">Jul 2024 – Feb 2026</text>
+<circle cx="200" cy="188" r="9" fill="#0d1117" stroke="#58a6ff" stroke-width="3"/>
+<circle cx="200" cy="188" r="3.5" fill="#58a6ff"/>
+<text x="226" y="193" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e6edf3">Ecorp Info Systems</text>
+<text x="226" y="216" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#58a6ff">Full Stack Developer</text>
+<text x="226" y="238" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#9da7b3">10+ production apps · 30,000+ daily active users · 50+ REST APIs · 99.5% uptime · React, Next.js, Node.js</text>
+<text x="176" y="284" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#9da7b3">2020 – 2024</text>
+<circle cx="200" cy="280" r="9" fill="#0d1117" stroke="#3fb950" stroke-width="3"/>
+<circle cx="200" cy="280" r="3.5" fill="#3fb950"/>
+<text x="226" y="285" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e6edf3">Shri Ramswaroop Memorial University</text>
+<text x="226" y="308" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#3fb950">B.Tech, Data Science &amp; AI</text>
+<text x="226" y="330" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#9da7b3">Machine learning, data science and software engineering</text>
+</svg>
